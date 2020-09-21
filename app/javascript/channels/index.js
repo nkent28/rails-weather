@@ -15,10 +15,10 @@ button.addEventListener('click', function(){
   fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=4e88eaf5d49f3485b223efdf825fbfa1')
   .then(response => response.json())
   .then(data => {
-    const nameValue = data['name'];
-    const iconValue = 'http://openweathermap.org/img/w/' + data.weather[0].icon + ".png";
+    const nameValue = data.name;
+    const iconValue = data.weather[0].icon;
     const tempValue = Math.round(data.main.temp);
-    const descVaue = data.weather[0].description;
+    const descValue = data.weather[0].description;
 
 
     name.innerHTML = nameValue;
